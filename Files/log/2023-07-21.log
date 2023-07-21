@@ -1,0 +1,105 @@
+2023-07-21 21:17:23,164 - root - INFO -  执行 test_information_success 测试用例 
+2023-07-21 21:17:23,165 - root - INFO -  基本资料正常测试用例：个人资料_基本资料_修改成功-1 
+2023-07-21 21:17:28,838 - root - INFO - 预期结果：['A', '男', '江西省 九江市 湖口县 文桥乡', '广东省 广州市 海珠区 官洲街道']
+2023-07-21 21:17:28,838 - root - INFO - 实际结果：['A', '男', '江西省 九江市 湖口县 文桥乡', '广东省 广州市 海珠区 官洲街道']
+2023-07-21 21:17:28,838 - root - INFO -  结束执行 test_information_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:28,840 - root - INFO -  执行 test_information_success 测试用例 
+2023-07-21 21:17:28,840 - root - INFO -  基本资料正常测试用例：个人资料_基本资料_修改成功-2 
+2023-07-21 21:17:29,722 - root - ERROR -  下拉框元素 ('xpath', '//select[@id="birthcity"]') 未出现，正在重试！！！：Message: stale element reference: stale element not found
+  (Session info: chrome=114.0.5735.198)
+Stacktrace:
+0   chromedriver                        0x00000001050cff48 chromedriver + 4226888
+1   chromedriver                        0x00000001050c84f4 chromedriver + 4195572
+2   chromedriver                        0x0000000104d0cd68 chromedriver + 281960
+3   chromedriver                        0x0000000104d116b0 chromedriver + 300720
+4   chromedriver                        0x0000000104d12fe4 chromedriver + 307172
+5   chromedriver                        0x0000000104d130d4 chromedriver + 307412
+6   chromedriver                        0x0000000104d47cac chromedriver + 523436
+7   chromedriver                        0x0000000104d3d734 chromedriver + 481076
+8   chromedriver                        0x0000000104d7ec58 chromedriver + 748632
+9   chromedriver                        0x0000000104d3bf1c chromedriver + 474908
+10  chromedriver                        0x0000000104d3cef4 chromedriver + 478964
+11  chromedriver                        0x000000010509159c chromedriver + 3970460
+12  chromedriver                        0x00000001050956f0 chromedriver + 3987184
+13  chromedriver                        0x000000010509b5b4 chromedriver + 4011444
+14  chromedriver                        0x00000001050962fc chromedriver + 3990268
+15  chromedriver                        0x000000010506e1c0 chromedriver + 3826112
+16  chromedriver                        0x00000001050b2088 chromedriver + 4104328
+17  chromedriver                        0x00000001050b21e0 chromedriver + 4104672
+18  chromedriver                        0x00000001050c1f28 chromedriver + 4169512
+19  libsystem_pthread.dylib             0x0000000197cc1240 _pthread_start + 148
+20  libsystem_pthread.dylib             0x0000000197cbc024 thread_start + 8
+
+2023-07-21 21:17:30,446 - root - ERROR -  下拉框元素 ('xpath', '//select[@id="residecity"]') 未出现，正在重试！！！：Message: stale element reference: stale element not found
+  (Session info: chrome=114.0.5735.198)
+Stacktrace:
+0   chromedriver                        0x00000001050cff48 chromedriver + 4226888
+1   chromedriver                        0x00000001050c84f4 chromedriver + 4195572
+2   chromedriver                        0x0000000104d0cd68 chromedriver + 281960
+3   chromedriver                        0x0000000104d116b0 chromedriver + 300720
+4   chromedriver                        0x0000000104d12fe4 chromedriver + 307172
+5   chromedriver                        0x0000000104d130d4 chromedriver + 307412
+6   chromedriver                        0x0000000104d47cac chromedriver + 523436
+7   chromedriver                        0x0000000104d3d734 chromedriver + 481076
+8   chromedriver                        0x0000000104d7ec58 chromedriver + 748632
+9   chromedriver                        0x0000000104d3bf1c chromedriver + 474908
+10  chromedriver                        0x0000000104d3cef4 chromedriver + 478964
+11  chromedriver                        0x000000010509159c chromedriver + 3970460
+12  chromedriver                        0x00000001050956f0 chromedriver + 3987184
+13  chromedriver                        0x000000010509b5b4 chromedriver + 4011444
+14  chromedriver                        0x00000001050962fc chromedriver + 3990268
+15  chromedriver                        0x000000010506e1c0 chromedriver + 3826112
+16  chromedriver                        0x00000001050b2088 chromedriver + 4104328
+17  chromedriver                        0x00000001050b21e0 chromedriver + 4104672
+18  chromedriver                        0x00000001050c1f28 chromedriver + 4169512
+19  libsystem_pthread.dylib             0x0000000197cc1240 _pthread_start + 148
+20  libsystem_pthread.dylib             0x0000000197cbc024 thread_start + 8
+
+2023-07-21 21:17:34,602 - root - INFO - 预期结果：['其它', '保密', '福建省 龙岩市 连城县 北团镇', '山东省 淄博市 沂源县 燕崖乡']
+2023-07-21 21:17:34,602 - root - INFO - 实际结果：['其它', '保密', '福建省 龙岩市 连城县 北团镇', '山东省 淄博市 沂源县 燕崖乡']
+2023-07-21 21:17:34,602 - root - INFO -  结束执行 test_information_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:34,604 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:34,604 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_自我介绍输入长 
+2023-07-21 21:17:39,865 - root - INFO - 预期结果：三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有3000至5000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。现有保存最完整的东、西、南城墙和月亮湾内城墙。三星堆遗址被称为20世纪人类最伟大的考古发现之一，昭示了长江流域与黄河流域一样，同属中华文明的母体，被誉为“长江文明之源”。
+2023-07-21 21:17:39,865 - root - INFO - 实际结果：三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有3000至5000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。现有保存最完整的东、西、南城墙和月亮湾内城墙。三星堆遗址被称为20世纪人类最伟大的考古发现之一，昭示了长江流域与黄河流域一样，同属中华文明的母体，被誉为“长江文明之源”。
+2023-07-21 21:17:39,866 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:39,868 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:39,868 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_自我介绍输入短 
+2023-07-21 21:17:44,771 - root - INFO - 预期结果：我是蔡徐坤
+2023-07-21 21:17:44,771 - root - INFO - 实际结果：我是蔡徐坤
+2023-07-21 21:17:44,772 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:44,776 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:44,776 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_性别女 
+2023-07-21 21:17:49,641 - root - INFO - 预期结果：女
+2023-07-21 21:17:49,641 - root - INFO - 实际结果：女
+2023-07-21 21:17:49,642 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:49,643 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:49,643 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_性别保密 
+2023-07-21 21:17:54,694 - root - INFO - 预期结果：保密
+2023-07-21 21:17:54,695 - root - INFO - 实际结果：保密
+2023-07-21 21:17:54,695 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:54,696 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:54,697 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_公司名输入长 
+2023-07-21 21:17:59,579 - root - INFO - 预期结果：蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司
+2023-07-21 21:17:59,579 - root - INFO - 实际结果：蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司
+2023-07-21 21:17:59,579 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:17:59,580 - root - INFO -  执行 test_condition_success 测试用例 
+2023-07-21 21:17:59,581 - root - INFO -  工作情况正常测试用例：个人资料_工作情况_修改成功_公司名输入中英文标点符号 
+2023-07-21 21:18:04,097 - root - INFO - 预期结果：da大会，。qweu
+2023-07-21 21:18:04,097 - root - INFO - 实际结果：da大会，。qweu
+2023-07-21 21:18:04,098 - root - INFO -  结束执行 test_condition_success 测试用例， 测试结果 --- PASS 
+2023-07-21 21:18:04,100 - root - INFO -  执行 test_condition_error 测试用例 
+2023-07-21 21:18:04,100 - root - INFO -  工作情况异常测试用例：个人资料_工作情况_自我介绍含有敏感词汇 
+2023-07-21 21:18:09,898 - root - INFO - 预期结果：请检查该资料项 (含有敏感词汇)
+2023-07-21 21:18:09,899 - root - INFO - 实际结果：请检查该资料项 (含有敏感词汇)
+2023-07-21 21:18:09,899 - root - INFO -  结束执行 test_condition_error 测试用例， 测试结果 --- PASS 
+2023-07-21 21:18:09,901 - root - INFO -  执行 test_condition_error 测试用例 
+2023-07-21 21:18:09,902 - root - INFO -  工作情况异常测试用例：个人资料_工作情况_公司名称为空 
+2023-07-21 21:18:16,668 - root - INFO - 预期结果：请检查该资料项
+2023-07-21 21:18:16,668 - root - INFO - 实际结果：请检查该资料项
+2023-07-21 21:18:16,669 - root - INFO -  结束执行 test_condition_error 测试用例， 测试结果 --- PASS 
+2023-07-21 21:18:16,671 - root - INFO -  执行 test_condition_error 测试用例 
+2023-07-21 21:18:16,671 - root - INFO -  工作情况异常测试用例：个人资料_工作情况_公司名称含有敏感词汇 
+2023-07-21 21:18:22,525 - root - INFO - 预期结果：请检查该资料项 (含有敏感词汇)
+2023-07-21 21:18:22,526 - root - INFO - 实际结果：请检查该资料项 (含有敏感词汇)
+2023-07-21 21:18:22,526 - root - INFO -  结束执行 test_condition_error 测试用例， 测试结果 --- PASS 

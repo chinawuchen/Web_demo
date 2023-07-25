@@ -1,6 +1,7 @@
 """
     个人资料页面测试用例
 """
+
 import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 sys.path.append(base_path)

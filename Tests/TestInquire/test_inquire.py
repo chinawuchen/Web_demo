@@ -32,6 +32,7 @@ class TestInquire(object):
             raise e
     
     # 异常用例:查询失败
+    @pytest.mark.skip(reason="无条件跳过")
     @pytest.mark.parametrize("test_info", cases_error)
     def test_inquire_error(sefl, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

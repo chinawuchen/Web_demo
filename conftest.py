@@ -41,6 +41,7 @@ def login_page(browser):
     login_page.get().login(user_info["username"], user_info["password"])
     yield browser
 
+
 # 打开关闭浏览器，只用于登录测试
 @pytest.fixture(scope="class")
 def browser_login():

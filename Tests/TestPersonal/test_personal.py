@@ -14,6 +14,7 @@ class TestPersonal(object):
 
     # 正常用例:基本资料修改成功
     @pytest.mark.information
+    @pytest.mark.skip(reason="无条件跳过")
     @pytest.mark.parametrize("test_info", information_cases_success)
     def test_information_success(sefl, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

@@ -17,10 +17,12 @@ logger = Log()
 # 打开关闭浏览器
 @pytest.fixture(scope="session")
 def browser():
-    # 设置 Chrome 驱动路径
     logger.info("==========开始 执行51项目测试===========")
+    # 设置 Chrome 驱动路径
     driver_path = '/usr/local/bin/chromedriver_mac_arm64'
+    # 配置 Chrome 浏览器选项
     chrome_options = Options()
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     # 启动 Chrome 浏览器
     service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -45,10 +47,12 @@ def login_page(browser):
 # 打开关闭浏览器，只用于登录测试
 @pytest.fixture(scope="class")
 def browser_login():
-    # 设置 Chrome 驱动路径
     logger.info("==========开始 执行51项目登录测试===========")
+    # 设置 Chrome 驱动路径
     driver_path = '/usr/local/bin/chromedriver_mac_arm64'
+    # 配置 Chrome 浏览器选项
     chrome_options = Options()
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     # 启动 Chrome 浏览器
     service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)

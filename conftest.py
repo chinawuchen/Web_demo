@@ -9,11 +9,16 @@ from selenium.webdriver.chrome.options import Options
 from Pages.LoginPage.login_page import LoginPage
 from Case.LoginCase.login_data import cases_success
 from Config import config
+from Common.base_log import Log
+
+
+logger = Log()
 
 # 打开关闭浏览器
 @pytest.fixture(scope="session")
 def browser():
     # 设置 Chrome 驱动路径
+    logger.info("==========开始 执行51项目测试===========")
     driver_path = '/usr/local/bin/chromedriver_mac_arm64'
     chrome_options = Options()
     # 启动 Chrome 浏览器
@@ -26,6 +31,7 @@ def browser():
     # 返回一个浏览器对象
     yield driver
     driver.quit()
+    logger.info("==========结束 执行51项目测试===========")
 
 # 已登录
 @pytest.fixture(scope="session")
@@ -39,6 +45,7 @@ def login_page(browser):
 @pytest.fixture(scope="class")
 def browser_login():
     # 设置 Chrome 驱动路径
+    logger.info("==========开始 执行51项目登录测试===========")
     driver_path = '/usr/local/bin/chromedriver_mac_arm64'
     chrome_options = Options()
     # 启动 Chrome 浏览器
@@ -51,3 +58,4 @@ def browser_login():
     # 返回一个浏览器对象
     yield driver
     driver.quit()
+    logger.info("==========结束 执行51项目登录测试===========")

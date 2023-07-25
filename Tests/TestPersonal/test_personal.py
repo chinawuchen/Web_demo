@@ -29,7 +29,7 @@ class TestPersonal(object):
             assert set(test_info["expected"]) == set(user_info), "基本资料修改成功"
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- False ")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             personal_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e
 
@@ -51,7 +51,7 @@ class TestPersonal(object):
             assert expected == user_info, "工作情况修改成功"
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- False ")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             condition_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e
 
@@ -72,6 +72,6 @@ class TestPersonal(object):
             assert expected == user_info, "工作情况修改失败"
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- False ")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             condition_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e

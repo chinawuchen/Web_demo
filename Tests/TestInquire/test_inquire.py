@@ -27,7 +27,7 @@ class TestInquire(object):
             assert test_info["expected"] in user_info, "查询成功"
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- False ")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             inquire_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e
     
@@ -46,6 +46,6 @@ class TestInquire(object):
             assert test_info["expected"] in user_info, "没有找到匹配结果"
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- False ")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             inquire_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e

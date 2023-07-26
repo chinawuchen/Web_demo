@@ -9,7 +9,7 @@ from Common.base_log import Log
 
 logger = Log()
 
-
+@pytest.mark.usefixtures('login_page')
 class TestInquire(object):
     
     # 正常用例:查询成功

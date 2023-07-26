@@ -1,3 +1,8 @@
+"""
+login_loctor
+    查询页面的元素
+"""
+
 import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 sys.path.append(base_path)

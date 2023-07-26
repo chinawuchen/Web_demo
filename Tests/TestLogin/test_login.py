@@ -9,7 +9,7 @@ from Common.base_log import Log
 
 logger = Log()
 
-
+@pytest.mark.usefixtures('browser_login')
 class TestLogin(object):
 
     # 登录成功

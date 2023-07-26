@@ -1,6 +1,6 @@
 """
 base_log
-    日志
+    日志封装
 """
 
 import sys, os

@@ -1,3 +1,8 @@
+"""
+personal_loctor
+    个人资料页面-基本资料tab页面元素
+"""
+
 import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 sys.path.append(base_path)

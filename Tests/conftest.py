@@ -36,10 +36,10 @@ def browser():
     driver.quit()
     logger.info("==========结束 执行51项目测试===========")
 
-# 打开关闭浏览器，只用于登录测试
-@pytest.fixture(scope="class")
+# 只用于登录模块测试--打开关闭浏览器
+@pytest.fixture(scope="module")
 def browser_login():
-    logger.info("==========开始 执行51项目登录测试===========")
+    logger.info("==========开始 执行51项目登录模块测试===========")
     # 设置 Chrome 驱动路径
     driver_path = '/usr/local/bin/chromedriver_mac_arm64'
     # 配置 Chrome 浏览器选项
@@ -55,9 +55,7 @@ def browser_login():
     # 返回一个浏览器对象
     yield driver
     driver.quit()
-    logger.info("==========结束 执行51项目登录测试===========")
-
-
+    logger.info("==========结束 执行51项目登录模块测试===========")
 
 # 已登录
 @pytest.fixture(scope="session")
@@ -66,10 +64,3 @@ def login_page(browser):
     user_info = cases_success[0]
     login_page.get().login(user_info["username"], user_info["password"])
     yield browser
-
-# 进入工作情况tab
-@pytest.fixture(scope="class")
-def enter_conditions_page(login_page):
-    psl_page = PersonalPage(login_page)
-    psl_page.get().click_conditions_btn()
-    yield login_page

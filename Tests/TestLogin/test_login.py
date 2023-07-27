@@ -16,8 +16,8 @@ class TestLogin(object):
     @pytest.mark.parametrize("test_info", cases_success)
     def test_login_success(self, test_info, browser_login):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
-        login_page = LoginPage(browser_login)
         logger.info(f" 登录正常测试用例：{test_info['CaseName']} ")
+        login_page = LoginPage(browser_login)
         login_page.get().login(test_info["username"], test_info["password"])
         user_info = login_page.get_user_success()
         logger.info(f"预期结果：{test_info['expected']}")

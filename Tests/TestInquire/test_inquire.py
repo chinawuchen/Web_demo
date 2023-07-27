@@ -16,9 +16,9 @@ class TestInquire(object):
     @pytest.mark.parametrize("test_info", cases_success)
     def test_inquire_success(sefl, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
+        logger.info(f" 查询正常测试用例：{test_info['CaseName']} ")
         driver = login_page
         inquire_page = InquirePage(driver)
-        logger.info(f" 查询正常测试用例：{test_info['CaseName']} ")
         inquire_page.get().inquire(test_info['iqname'])
         user_info = inquire_page.get_inquire_success()
         logger.info(f"预期结果：{test_info['expected']}")

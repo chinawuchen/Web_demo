@@ -13,6 +13,6 @@ from selenium.webdriver.common.by import By
 class InquireLocator(object):
 
     inquire_locator = (By.ID, 'scform_srchtxt')
-    submit_locator = (By.XPATH, '//button')
+    submit_locator = (By.ID, 'scform_submit')
     success_inquire_locator = (By.XPATH, '//font')
     error_inquire_locator = (By.XPATH, '//p')

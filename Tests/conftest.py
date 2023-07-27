@@ -36,6 +36,15 @@ def browser():
     driver.quit()
     logger.info("==========结束 执行51项目测试===========")
 
+# 已登录
+@pytest.fixture(scope="session")
+def login_page(browser):
+    login_page = LoginPage(browser)
+    user_info = cases_success[0]
+    login_page.get().login(user_info["username"], user_info["password"])
+    yield browser
+    
+
 # 只用于登录模块测试--打开关闭浏览器
 @pytest.fixture(scope="module")
 def browser_login():
@@ -56,11 +65,3 @@ def browser_login():
     yield driver
     driver.quit()
     logger.info("==========结束 执行51项目登录模块测试===========")
-
-# 已登录
-@pytest.fixture(scope="session")
-def login_page(browser):
-    login_page = LoginPage(browser)
-    user_info = cases_success[0]
-    login_page.get().login(user_info["username"], user_info["password"])
-    yield browser

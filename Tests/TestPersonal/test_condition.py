@@ -15,9 +15,9 @@ class TestCondition(object):
     # 正常用例:工作情况修改成功
     @pytest.mark.parametrize("test_info, compare", conditions_cases_success)
     def test_condition_success(sefl, test_info, compare, enter_conditions_page):
-        logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         driver = enter_conditions_page
         condition_page = ConditionPage(driver)
+        logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 工作情况正常测试用例：{test_info['CaseName']} ")
         condition_page.send_visitors(test_info["visempty"], test_info["visitors"]).choose_gender(
             test_info["gender"]).send_company(test_info["cisempty"], test_info["company"]).send_companylog(test_info["companylog"]).choose_submit()
@@ -36,9 +36,9 @@ class TestCondition(object):
     # 异常用例:工作情况修改失败
     @pytest.mark.parametrize("test_info, compare", conditions_cases_error)
     def test_condition_error(self, test_info, compare, enter_conditions_page):
-        logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         driver = enter_conditions_page
         condition_page = ConditionPage(driver)
+        logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 工作情况异常测试用例：{test_info['CaseName']} ")
         condition_page.send_visitors(test_info["visempty"], test_info["visitors"]).choose_gender(
             test_info["gender"]).send_company(test_info["cisempty"], test_info["company"]).send_companylog(test_info["companylog"]).choose_submit()

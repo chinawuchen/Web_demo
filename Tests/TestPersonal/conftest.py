@@ -9,6 +9,13 @@ from Common.base_log import Log
 logger = Log()
 
 
+# 进入联系方式tab
+@pytest.fixture(scope="class")
+def enter_contact_page(login_page):
+    psl_page = PersonalPage(login_page)
+    psl_page.get().click_contact_btn()
+    yield login_page
+
 # 进入工作情况tab
 @pytest.fixture(scope="class")
 def enter_conditions_page(login_page):

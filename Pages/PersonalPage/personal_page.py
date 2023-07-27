@@ -5,6 +5,7 @@ sys.path.append(base_path)
 from Loctors.PersonalLoctors.personal_loctor import PersonalLoctor as loc
 from Common.base_page import BasePage
 from Pages.PersonalPage.condition_page import ConditionPage
+from Pages.PersonalPage.contact_page import ContactPage
 from Config import page_urls
 
 
@@ -23,6 +24,11 @@ class PersonalPage(BasePage):
     def click_conditions_btn(self):
         self.find(loc.condition_locator).click()
         return ConditionPage(self.driver)
+    
+    # 点击联系方式按钮进入:联系方式tab
+    def click_contact_btn(self):
+        self.find(loc.contact_locator).click()
+        return ContactPage(self.driver)
 
     # 基本资料:选择血型
     def choose_bloodtype(self, value=None):

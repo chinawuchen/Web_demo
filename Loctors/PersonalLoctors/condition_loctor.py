@@ -16,13 +16,12 @@ class ConditionLoctor(object):
 
     """修改工作情况元素"""
     page_load__locator = (By.TAG_NAME, 'html') # 等待页面刷新的元素，通用
-
     visitors_locator = (By.XPATH, '//textarea[@id="bio"]') # 自我介绍输入框
     company_locator = (By.XPATH, '//input[@id="company"]') # 公司输入框
     gender_locator = (By.XPATH, '//select[@id="gender"]') # 性别，通用
     headhunters_locator = (By.XPATH, '//input[@value="猎头"]') # 公司属性,猎头
     enterprise_locator = (By.XPATH, '//input[@value="企业"]') # 公司属性,企业
-    submit_locator = (By.XPATH, '//button[@id="profilesubmitbtn"]') # 保存按钮，通用
+    submit_locator = (By.ID, 'profilesubmitbtn') # 保存按钮，通用
     save_condition_locator = (By.XPATH, '//div[@class="alert_right"]/p') # 资料更新成功
 
     # 工作情况断言元素

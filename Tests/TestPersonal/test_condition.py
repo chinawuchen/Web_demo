@@ -14,7 +14,7 @@ class TestCondition(object):
 
     # 正常用例:工作情况修改成功
     @pytest.mark.parametrize("test_info, compare", conditions_cases_success)
-    def test_condition_success(sefl, test_info, compare, enter_conditions_page):
+    def test_condition_success(self, test_info, compare, enter_conditions_page):
         driver = enter_conditions_page
         condition_page = ConditionPage(driver)
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

@@ -10,7 +10,7 @@ from Config import page_urls
 
 
 
-"""个人资料页面-基本资料tab操作"""
+"""设置-个人资料页面-基本资料tab操作"""
 
 
 class PersonalPage(BasePage):

@@ -1,6 +1,6 @@
 """
 personal_loctor
-    个人资料页面-基本资料tab页面元素
+    设置-个人资料页面-基本资料tab页面元素
 """
 
 import sys, os

@@ -6,7 +6,7 @@ from Loctors.PersonalLocators.contact_locator import ContactLocator as loc
 from Common.base_page import BasePage
 
 
-"""个人资料页面-联系方式tab操作"""
+"""设置-个人资料页面-联系方式tab操作"""
 
 class ContactPage(BasePage):
     

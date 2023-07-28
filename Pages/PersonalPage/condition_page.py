@@ -6,7 +6,7 @@ from Loctors.PersonalLocators.condition_locator import ConditionLocator as loc
 from Common.base_page import BasePage
 
 
-"""个人资料页面-工作情况tab操作"""
+"""设置-个人资料页面-工作情况tab操作"""
 
 
 class ConditionPage(BasePage):

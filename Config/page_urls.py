@@ -14,5 +14,5 @@ HOST = "http://bbs.51testing.com"
 login_url = HOST + "/forum.php"
 # 查询页面地址
 inquire_url = HOST + "/search.php"
-# 个人资料页面地址
+# 设置-个人资料页面地址
 personal_url = HOST + "/home.php?mod=spacecp&ac=profile"

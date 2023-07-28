@@ -90,15 +90,16 @@ class PersonalPage(BasePage):
         except Exception:
             pass
         return self
-    
-    # 获取修改后基本资料信息
-    def get_information_success(self):
-        information_success = []
-        information_success.append(
-            self.get_text(loc.success_bloodtype_locator))
-        information_success.append(self.get_text(loc.success_gender_locator))
-        information_success.append(self.get_text(
-            loc.success_birth_locator).replace(" (修改)", ""))
-        information_success.append(self.get_text(
-            loc.success_reside_locator).replace(" (修改)", ""))
-        return information_success
+
+    def get_information_success(self, key):
+        expected = None
+        contact_methods = {
+            "bloodtype":loc.success_bloodtype_locator,
+            "gender":loc.success_gender_locator,
+            "birth":loc.success_birth_locator,
+            "reside":loc.success_reside_locator
+        }
+        if key in contact_methods:
+            locator = contact_methods[key]
+            expected = self.get_text(locator)
+        return expected

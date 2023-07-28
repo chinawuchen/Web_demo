@@ -2,9 +2,8 @@ import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 sys.path.append(base_path)
 
-from Loctors.PersonalLoctors.condition_loctor import ConditionLoctor as loc
+from Loctors.PersonalLocators.condition_locator import ConditionLocator as loc
 from Common.base_page import BasePage
-
 
 
 """个人资料页面-工作情况tab操作"""
@@ -27,7 +26,7 @@ class ConditionPage(BasePage):
         if value:
             company_elem.send_keys(value)
         return self
-    
+
     # 工作情况:选择性别
     def choose_gender(self, value=None):
         self.choice_select(loc.gender_locator, value) if value else None
@@ -42,7 +41,7 @@ class ConditionPage(BasePage):
         if value and value in click_mapping:
             self.find(click_mapping[value]).click()
         return self
-    
+
     # 点击保存 / 工作情况tab通用
     def choose_submit(self):
         try:
@@ -52,57 +51,34 @@ class ConditionPage(BasePage):
             pass
         return self
 
-    # 工作情况:获取自我介绍信息
-    def get_conditions_visitors(self):
-        visitors_text = self.get_text(loc.visitors_locator)
-        return visitors_text
-    
-    # 工作情况:获取性别信息
-    def get_conditions_gender(self):
-        gender_text = self.get_text(loc.success_gender1_locator)
-        return gender_text
-    
-    # 工作情况:获取公司名称信息
-    def get_conditions_company(self):
-        company_text = self.get_key_value(loc.company_locator, "value")
-        return company_text
-    
-    # 工作情况:获取公司属性信息
-    def get_conditions_button(self):
-        head_button = self.find(loc.headhunters_locator)
-        if head_button.is_selected():
-            head_button = "猎头"
-        enter_button = self.find(loc.enterprise_locator)
-        if enter_button.is_selected():
-            enter_button = "企业"
-        return head_button, enter_button
-    
     # 工作情况: 根据 key 获取成功断言
     def get_conditions_success(self, key):
-        if key == "visitors":
-            expected = self.get_conditions_visitors()
-        elif key == "gender":
-            expected = self.get_conditions_gender()
+        conditions = {
+            "visitors": loc.visitors_locator,
+            "gender": loc.success_gender1_locator,
+            "company": loc.company_locator,
+            "companylog": (loc.headhunters_locator, loc.enterprise_locator)
+        }
+        if key == "companylog":
+            head_button = "猎头" if self.find(conditions[key][0]).is_selected() else None
+            enter_button = "企业" if self.find(conditions[key][1]).is_selected() else None
+            return head_button or enter_button or ""
         elif key == "company":
-            expected = self.get_conditions_company()
+            expected = self.get_key_value(conditions[key], "value")
+        elif key in ["visitors", "gender"]:
+            expected = self.get_text(conditions[key])
         else:
-            expected = self.get_conditions_button()
+            expected = None
         return expected
 
-    # 工作情况:公司名称错误检查
-    def get_company_error(self):
-        company_error = self.get_text(loc.error_company_locator)
-        return company_error
-
-    # 工作情况:自我介绍错误检查
-    def get_visitors_error(self):
-        visitors_error = self.get_text(loc.error_visitors_locator)
-        return visitors_error
-    
     # 工作情况: 根据 key 获取失败断言
     def get_conditions_error(self, key):
-        if key == "visitors":
-            expected = self.get_visitors_error()
-        elif key == "company":
-            expected = self.get_company_error()
+        expected = None
+        condition_methods = {
+            "visitors": loc.error_visitors_locator,
+            "company": loc.error_company_locator,
+        }
+        if key in condition_methods:
+            loctaor = condition_methods[key]
+            expected = self.get_text(loctaor)
         return expected

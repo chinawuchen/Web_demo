@@ -2,7 +2,7 @@ import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 sys.path.append(base_path)
 
-from Loctors.PersonalLoctors.contact_loctor import ContactLoctor as loc
+from Loctors.PersonalLocators.contact_locator import ContactLocator as loc
 from Common.base_page import BasePage
 
 

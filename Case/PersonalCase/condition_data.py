@@ -9,17 +9,21 @@ sys.path.append(base_path)
 # 修改工作情况测试用例
 conditions_cases_success = [
     ({"CaseName": "个人资料_工作情况_修改成功_自我介绍输入长", "visempty": "yes", "visitors": "三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有3000至5000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。现有保存最完整的东、西、南城墙和月亮湾内城墙。三星堆遗址被称为20世纪人类最伟大的考古发现之一，昭示了长江流域与黄河流域一样，同属中华文明的母体，被誉为“长江文明之源”。",
-        "gender": "0", "cisempty": "yes", "company": "mou蔡徐坤有限公司有限公司有限公司有限公司", "companylog": "企业"}, {"visitors": "三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有3000至5000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。现有保存最完整的东、西、南城墙和月亮湾内城墙。三星堆遗址被称为20世纪人类最伟大的考古发现之一，昭示了长江流域与黄河流域一样，同属中华文明的母体，被誉为“长江文明之源”。"}),
+        "gender": "0", "cisempty": "yes", "company": "mou蔡徐坤有限公司有限公司有限公司有限公司", "companylog": ""}, {"visitors": "三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有3000至5000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。现有保存最完整的东、西、南城墙和月亮湾内城墙。三星堆遗址被称为20世纪人类最伟大的考古发现之一，昭示了长江流域与黄河流域一样，同属中华文明的母体，被誉为“长江文明之源”。"}),
     ({"CaseName": "个人资料_工作情况_修改成功_自我介绍输入短", "visempty": "yes", "visitors": "我是蔡徐坤", "gender": "1", "cisempty": "yes", "company": "蔡徐坤有限公司",
-        "companylog": "猎头"}, {"visitors": "我是蔡徐坤"}),
+        "companylog": ""}, {"visitors": "我是蔡徐坤"}),
     ({"CaseName": "个人资料_工作情况_修改成功_性别女", "visempty": "no", "visitors": "", "gender": "2", "cisempty": "no", "company": "",
       "companylog": ""}, {"gender": "女"}),
     ({"CaseName": "个人资料_工作情况_修改成功_性别保密", "visempty": "no", "visitors": "", "gender": "0", "cisempty": "no", "company": "",
       "companylog": ""}, {"gender": "保密"}),
     ({"CaseName": "个人资料_工作情况_修改成功_公司名输入长", "visempty": "no", "visitors": "", "gender": "1", "cisempty": "yes", "company": "蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司",
-      "companylog": "猎头"}, {"company": "蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司"}),
+      "companylog": ""}, {"company": "蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司蔡徐坤有限公司"}),
     ({"CaseName": "个人资料_工作情况_修改成功_公司名输入中英文标点符号", "visempty": "no", "visitors": "", "gender": "1", "cisempty": "yes", "company": "da大会，。qweu",
-      "companylog": "猎头"}, {"company": "da大会，。qweu"}),
+      "companylog": ""}, {"company": "da大会，。qweu"}),
+    ({"CaseName": "个人资料_工作情况_修改成功_公司属性猎头", "visempty": "no", "visitors": "", "gender": "1", "cisempty": "yes", "company": "da大会，。qweu",
+        "companylog": "猎头"}, {"companylog": "猎头"}),
+    ({"CaseName": "个人资料_工作情况_修改成功_公司属性企业", "visempty": "no", "visitors": "", "gender": "1", "cisempty": "yes", "company": "da大会，。qweu",
+        "companylog": "企业"}, {"companylog": "企业"}),
 ]
 
 conditions_cases_error = [

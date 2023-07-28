@@ -4,7 +4,7 @@ sys.path.append(base_path)
 
 from Common.base_page import BasePage
 from Config import page_urls
-from Loctors.InquireLoctors.inquire_loctor import InquireLocator as loc
+from Loctors.InquireLocators.inquire_locator import InquireLocator as loc
 
 
 """查询页面操作"""

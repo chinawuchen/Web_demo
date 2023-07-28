@@ -4,7 +4,7 @@ sys.path.append(base_path)
 
 from Config import page_urls
 from Common.base_page import BasePage
-from Loctors.LoginLoctors.login_loctor import LoginLocator as loc
+from Loctors.LoginLocators.login_locator import LoginLocator as loc
 
 
 class LoginPage(BasePage):

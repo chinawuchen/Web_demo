@@ -91,6 +91,7 @@ class PersonalPage(BasePage):
             pass
         return self
 
+    # 基本资料:根据断言方式key，获取对应的实际结果
     def get_information_success(self, key):
         expected = None
         contact_methods = {

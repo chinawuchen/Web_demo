@@ -17,8 +17,7 @@ class TestCondition(object):
     def test_condition_success(self, test_info, compare, enter_conditions_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 工作情况正常测试用例：{test_info['CaseName']} ")
-        driver = enter_conditions_page
-        condition_page = ConditionPage(driver)
+        condition_page = ConditionPage(enter_conditions_page)
         condition_page.send_visitors(test_info["visempty"], test_info["visitors"]).choose_gender(
             test_info["gender"]).send_company(test_info["cisempty"], test_info["company"]).send_companylog(test_info["companylog"]).choose_submit()
         key, expected = list(compare.items())[0] # 实际结果方式，预期结果
@@ -26,11 +25,12 @@ class TestCondition(object):
         logger.info(f"预期结果：{expected}")
         logger.info(f"实际结果：{user_info}")
         try:
-            assert expected == user_info, "工作情况修改成功"
+            assert expected == user_info
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             condition_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {user_info} != {expected}")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             raise e
 
     # 异常用例:工作情况修改失败
@@ -38,8 +38,7 @@ class TestCondition(object):
     def test_condition_error(self, test_info, compare, enter_conditions_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 工作情况异常测试用例：{test_info['CaseName']} ")
-        driver = enter_conditions_page
-        condition_page = ConditionPage(driver)
+        condition_page = ConditionPage(enter_conditions_page)
         condition_page.send_visitors(test_info["visempty"], test_info["visitors"]).choose_gender(
             test_info["gender"]).send_company(test_info["cisempty"], test_info["company"]).send_companylog(test_info["companylog"]).choose_submit()
         key, expected = list(compare.items())[0] # 实际结果方式，预期结果
@@ -47,9 +46,10 @@ class TestCondition(object):
         logger.info(f"预期结果：{expected}")
         logger.info(f"实际结果：{user_info}")
         try:
-            assert expected == user_info, "工作情况修改失败"
+            assert expected == user_info
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             condition_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {user_info} != {expected}")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             raise e

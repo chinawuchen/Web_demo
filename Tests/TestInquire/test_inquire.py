@@ -15,39 +15,41 @@ class TestInquire(object):
     
     # 正常用例:查询成功
     @pytest.mark.parametrize("test_info", cases_success)
-    def test_inquire_success(sefl, test_info, login_page):
+    def test_inquire_success(self, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 查询正常测试用例：{test_info['CaseName']} ")
-        driver = login_page
-        inquire_page = InquirePage(driver)
-        if inquire_page.show_warning(): # 如果是True就休息10s
-            time.sleep(10)
+        inquire_page = InquirePage(login_page)
         user_info = inquire_page.get().inquire(test_info['iqname']).get_inquire_success()
+        logger.info(f"等待 10 秒，避免频繁搜索")
+        time.sleep(10)
         logger.info(f"预期结果：{test_info['expected']}")
         logger.info(f"实际结果：{user_info}")
         try:
-            assert test_info["expected"] in user_info, "查询成功"
+            assert test_info["expected"] == user_info
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             inquire_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {user_info} != {test_info['expected']}")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             raise e
     
     # 异常用例:查询失败
     # @pytest.mark.skip(reason="无条件跳过")
     @pytest.mark.parametrize("test_info", cases_error)
-    def test_inquire_error(sefl, test_info, login_page):
+    def test_inquire_error(self, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 查询异常测试用例：{test_info['CaseName']} ")
-        driver = login_page
-        inquire_page = InquirePage(driver)
+        inquire_page = InquirePage(login_page)
         user_info = inquire_page.get().inquire(test_info['iqname']).get_inquire_error()
+        logger.info(f"等待 10 秒，避免频繁搜索")
+        time.sleep(10)
         logger.info(f"预期结果：{test_info['expected']}")
         logger.info(f"实际结果：{user_info}")
         try:
-            assert test_info["expected"] in user_info, "没有找到匹配结果"
+            assert test_info["expected"] == user_info
             logger.info(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
-            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             inquire_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {user_info} != {test_info['expected']}")
+            logger.error(f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
             raise e

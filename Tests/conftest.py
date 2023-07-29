@@ -42,6 +42,7 @@ def login_page(browser):
     login_page = LoginPage(browser)
     user_info = cases_success[0]
     login_page.get().login(user_info["username"], user_info["password"])
+    logger.info("==========登录成功！===========")
     yield browser
     
 

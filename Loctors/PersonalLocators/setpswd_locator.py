@@ -19,6 +19,6 @@ class SetpswdLocator(object):
     newpassword2_locator = (By.ID, 'newpassword2') # 确认密码
     submit_locator = (By.CSS_SELECTOR, 'button[name="pwdsubmit"]') # 保存按钮
     
-    successfully_locator = (By.ID, 'messagetext') # 个人资料保存成功
+    successfully_locator = (By.CSS_SELECTOR, '#messagetext > p:first-child') # 个人资料保存成功
     # back_locator = (By.LINK_TEXT, '[ 点击这里返回上一页 ]') # 点击这里返回上一页
 

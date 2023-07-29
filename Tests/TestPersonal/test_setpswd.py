@@ -18,21 +18,21 @@ class TestSetpswd(object):
     def test_setpswd_success(self, test_info, compare, enter_setpassword_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 修改密码正常测试用例：{test_info['CaseName']} ")
-        driver = enter_setpassword_page
-        setpswd_page = SetpswdPage(driver)
+        setpswd_page = SetpswdPage(enter_setpassword_page)
         successfully = setpswd_page.send_password(test_info['clear_old'], test_info['oldpassword'], test_info['clear_new'],
                                                   test_info['newpassword'], test_info['clear_new2'], test_info['newpassword2']).choose_submit().choose_submit().get_export()
         key, expected = list(compare.items())[0]  # 实际结果方式，预期结果
         logger.info(f"预期结果：{expected}")
         logger.info(f"实际结果：{successfully}")
         try:
-            assert expected == successfully, "密码修改成功"
+            assert expected == successfully
             logger.info(
                 f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
+            setpswd_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {successfully} != {expected}")
             logger.error(
                 f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
-            setpswd_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e
 
     # 异常用例:修改密码失败
@@ -41,20 +41,20 @@ class TestSetpswd(object):
     def test_setpswd_error(self, test_info, compare, enter_setpassword_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 修改密码异常测试用例：{test_info['CaseName']} ")
-        driver = enter_setpassword_page
-        setpswd_page = SetpswdPage(driver)
+        setpswd_page = SetpswdPage(enter_setpassword_page)
         key, expected = list(compare.items())[0]  # 实际结果方式，预期结果
         user_info = setpswd_page.send_password(test_info['clear_old'], test_info['oldpassword'], test_info['clear_new'],
                                                   test_info['newpassword'], test_info['clear_new2'], test_info['newpassword2']).choose_submit().choose_submit().get_export()
-        driver.back()
+        enter_setpassword_page.back()
         logger.info(f"预期结果：{expected}")
         logger.info(f"实际结果：{user_info}")
         try:
-            assert expected in user_info, "密码修改失败"
+            assert expected == user_info
             logger.info(
                 f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- PASS ")
         except AssertionError as e:
+            setpswd_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
+            logger.error(f"实际结果与预期结果不符: {user_info} != {expected}")
             logger.error(
                 f" 结束执行 {sys._getframe().f_code.co_name} 测试用例， 测试结果 --- Fail ")
-            setpswd_page.save_screenshot(f"失败用例截图：{(test_info['CaseName'])}")
             raise e

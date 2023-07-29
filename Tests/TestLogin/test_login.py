@@ -14,6 +14,7 @@ logger = Log()
 class TestLogin(object):
 
     # 登录成功
+    @pytest.mark.smoke # 冒烟测试
     @pytest.mark.parametrize("test_info", cases_success)
     def test_login_success(self, test_info, browser_login):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

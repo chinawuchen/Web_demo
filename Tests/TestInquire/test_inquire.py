@@ -14,6 +14,7 @@ logger = Log()
 class TestInquire(object):
     
     # 正常用例:查询成功
+    @pytest.mark.smoke # 冒烟测试
     @pytest.mark.parametrize("test_info", cases_success)
     def test_inquire_success(self, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

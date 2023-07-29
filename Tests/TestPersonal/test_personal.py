@@ -13,7 +13,6 @@ logger = Log()
 class TestPersonal(object):
 
     # 正常用例:基本资料修改成功
-    @pytest.mark.information
     @pytest.mark.parametrize("test_info, compare", information_cases_success)
     def test_information_success(sefl, test_info, compare, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")

@@ -6,6 +6,7 @@ from Loctors.PersonalLocators.personal_locator import PersonalLocator as loc
 from Common.base_page import BasePage
 from Pages.PersonalPage.condition_page import ConditionPage
 from Pages.PersonalPage.contact_page import ContactPage
+from Pages.PersonalPage.setpswd_page import SetpswdPage
 from Config import page_urls
 
 
@@ -29,6 +30,11 @@ class PersonalPage(BasePage):
     def click_contact_btn(self):
         self.find(loc.contact_locator).click()
         return ContactPage(self.driver)
+    
+    # 点击密码安全按钮进入:密码安全tab
+    def click_setpassword_btn(self):
+        self.find(loc.setpassword_locator).click()
+        return SetpswdPage(self.driver)
 
     # 基本资料:选择血型
     def choose_bloodtype(self, value=None):

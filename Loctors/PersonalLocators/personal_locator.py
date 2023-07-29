@@ -16,6 +16,7 @@ class PersonalLocator(object):
     information_locator = (By.XPATH, '//ul[@class="tb cl"]/li[1]') # 基本资料tab
     contact_locator = (By.XPATH, '//ul[@class="tb cl"]/li[2]') # 联系方式tab
     condition_locator = (By.XPATH, '//ul[@class="tb cl"]/li[3]') # 工作情况tab
+    setpassword_locator = (By.LINK_TEXT, "密码安全") # 密码安全tab
 
     bloodtype_locator = (By.ID, 'bloodtype') # 血型
     gender_locator = (By.ID, 'gender') # 性别，通用

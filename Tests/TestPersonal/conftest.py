@@ -22,3 +22,10 @@ def enter_conditions_page(login_page):
     psl_page = PersonalPage(login_page)
     psl_page.get().click_conditions_btn()
     yield login_page
+
+# 进入密码安全tab
+@pytest.fixture(scope="class")
+def enter_setpassword_page(login_page):
+    psl_page = PersonalPage(login_page)
+    psl_page.get().click_setpassword_btn()
+    yield login_page

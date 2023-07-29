@@ -7,13 +7,16 @@ import sys, os
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(base_path)
 
+import time
+import platform
+import pyautogui
+from pywinauto import Desktop
 from selenium.webdriver import Chrome
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver import ActionChains
 from datetime import datetime
-import pyautogui
 from Config import config
 from Common.base_log import Log
 
@@ -134,6 +137,23 @@ class BasePage(object):
         except Exception as err:
             logger.error(f" 根据关键字 {locator} 获取信息失败：{err}")
         return value
+
+    def add_file(self, file_path):
+            if platform.system() == 'Windows':
+                # Windows下的添加文件操作
+                app = Desktop
+                dialog = app['打开']
+                time.sleep(2)
+                dialog["Edit"].type_keys(file_path)
+                dialog["Button"].click()
+            elif platform.system() == 'Darwin':  # macOS系统
+                # macOS下的添加文件操作
+                pyautogui.hotkey('command', 'o')
+                time.sleep(2)
+                pyautogui.typewrite(file_path)
+                pyautogui.press('enter')
+            else:
+                raise NotImplementedError(f"Unsupported operating system: {platform.system()}")
 
     # 等待页面刷新完成
     def wait_page_load(self, locator, timeout=5):

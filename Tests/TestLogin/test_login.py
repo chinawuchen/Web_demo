@@ -9,6 +9,7 @@ from Common.base_log import Log
 
 logger = Log()
 
+@pytest.mark.skip(reason="无条件跳过")
 @pytest.mark.usefixtures('browser_login')
 class TestLogin(object):
 

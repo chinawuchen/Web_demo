@@ -31,3 +31,9 @@ class InquirePage(BasePage):
     def get_inquire_error(self):
         e = self.wait_element_visible(loc.error_inquire_locator)
         return e.text.strip()
+    
+    def show_warning(self):
+        if self.find(loc.alertinfo_locator):
+            return True
+        else:
+            return False

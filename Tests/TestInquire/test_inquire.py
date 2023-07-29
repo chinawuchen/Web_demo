@@ -6,6 +6,7 @@ import pytest
 from Pages.InquirePage.inquire_page import InquirePage
 from Case.InquireCase.inquire_data import cases_success, cases_error
 from Common.base_log import Log
+import time
 
 logger = Log()
 
@@ -19,8 +20,9 @@ class TestInquire(object):
         logger.info(f" 查询正常测试用例：{test_info['CaseName']} ")
         driver = login_page
         inquire_page = InquirePage(driver)
-        inquire_page.get().inquire(test_info['iqname'])
-        user_info = inquire_page.get_inquire_success()
+        if inquire_page.show_warning(): # 如果是True就休息10s
+            time.sleep(10)
+        user_info = inquire_page.get().inquire(test_info['iqname']).get_inquire_success()
         logger.info(f"预期结果：{test_info['expected']}")
         logger.info(f"实际结果：{user_info}")
         try:
@@ -32,15 +34,14 @@ class TestInquire(object):
             raise e
     
     # 异常用例:查询失败
-    @pytest.mark.skip(reason="无条件跳过")
+    # @pytest.mark.skip(reason="无条件跳过")
     @pytest.mark.parametrize("test_info", cases_error)
     def test_inquire_error(sefl, test_info, login_page):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
+        logger.info(f" 查询异常测试用例：{test_info['CaseName']} ")
         driver = login_page
         inquire_page = InquirePage(driver)
-        logger.info(f" 查询异常测试用例：{test_info['CaseName']} ")
-        inquire_page.get().inquire(test_info['iqname'])
-        user_info = inquire_page.get_inquire_error()
+        user_info = inquire_page.get().inquire(test_info['iqname']).get_inquire_error()
         logger.info(f"预期结果：{test_info['expected']}")
         logger.info(f"实际结果：{user_info}")
         try:

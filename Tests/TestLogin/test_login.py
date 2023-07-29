@@ -18,8 +18,7 @@ class TestLogin(object):
         logger.info(f" 执行 {sys._getframe().f_code.co_name} 测试用例 ")
         logger.info(f" 登录正常测试用例：{test_info['CaseName']} ")
         login_page = LoginPage(browser_login)
-        login_page.get().login(test_info["username"], test_info["password"])
-        user_info = login_page.get_user_success()
+        user_info = login_page.get().login(test_info["username"], test_info["password"]).get_user_success()
         logger.info(f"预期结果：{test_info['expected']}")
         logger.info(f"实际结果：{user_info}")
         try:

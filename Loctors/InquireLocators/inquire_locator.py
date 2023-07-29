@@ -16,3 +16,6 @@ class InquireLocator(object):
     submit_locator = (By.ID, 'scform_submit')
     success_inquire_locator = (By.XPATH, '//font')
     error_inquire_locator = (By.XPATH, '//p')
+
+    alertinfo_locator = (By.ID, 'messagetext') # 抱歉，您在 10 秒内只能进行一次搜索
+    

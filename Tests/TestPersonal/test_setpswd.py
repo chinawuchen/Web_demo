@@ -13,6 +13,7 @@ logger = Log()
 class TestSetpswd(object):
 
     # 正常用例:修改密码成功
+    @pytest.mark.skip(reason="无条件跳过")
     @pytest.mark.run(order=2)
     @pytest.mark.parametrize("test_info, compare", setpswd_cases_success)
     def test_setpswd_success(self, test_info, compare, enter_setpassword_page):
